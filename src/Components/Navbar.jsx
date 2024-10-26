@@ -1,22 +1,11 @@
+import "../styles/Navbar.css";
 const Navbar = () => {
   return (
-    <nav>
-      {/* <Logo /> */}
-      <h3>Home</h3>
-      <h3>Contact</h3>
-      <h3>Destacados</h3>
+    <nav className="navbar">
+      <h4>Home</h4>
+      <h4>Contact</h4>
+      <h4>Destacados</h4>
     </nav>
   );
 };
 export default Navbar;
-// export Navbar
-
-// const Logo = () => {
-//   return (
-//     <>
-//       <h5>Mi logo</h5>
-//       <img src="" alt="logo" />
-//     </>
-//   );
-// };
-// export { Navbar, Logo };
