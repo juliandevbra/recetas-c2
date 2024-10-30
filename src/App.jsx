@@ -13,11 +13,11 @@ const titleStyles = {
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
       <h1 style={titleStyles}>Bienvenidos a proyecto Recetas</h1>
       <Home />
-    </div>
+    </>
   );
 }
 
