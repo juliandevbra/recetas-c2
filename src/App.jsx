@@ -1,6 +1,7 @@
 import "./styles/App.css";
 import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
+import Form from "./Components/Form";
 
 const titleStyles = {
   backgroundColor: "#ffda92",
@@ -16,6 +17,7 @@ function App() {
     <>
       <Navbar />
       <h1 style={titleStyles}>Bienvenidos a proyecto Recetas</h1>
+      <Form />
       <Home />
     </>
   );
