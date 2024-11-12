@@ -16,6 +16,13 @@ const Form = () => {
     event.preventDefault();
     const regexNum = /[0-9]/; // /\d/
     console.log(regexNum.test(user.direccion));
+
+    // trim() //trimStart()
+    // string[0] !== " "
+    // let regex = /^\s/
+    // !regex.test(string)
+    // !string.startsWith(" ")
+
     if (
       user.nombre.trim().length >= 3 &&
       !regexNum.test(user.nombre) &&
@@ -28,6 +35,7 @@ const Form = () => {
     }
   };
   console.log(user);
+
   return (
     <div>
       {/*  {condicon ? true : false} */}
@@ -61,18 +69,3 @@ const Form = () => {
 };
 
 export default Form;
-
-// const input = document.getElementById('nombre')
-
-// input.value
-
-// const form = document.querySelector("form");
-// form.addEventListener("submit", (e) => {
-//   e.preventDefault();
-// });
-
-// if(condicion){
-//     //Que pasa si la condicion da true
-// } else {
-//     //Que pasa si la condicion da false
-// }
