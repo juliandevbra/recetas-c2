@@ -1,15 +1,15 @@
 import { cardContainer } from "../styles/Card.module.css";
 import Counter from "./Counter";
 
-const Card = ({ pizza, setCart, cart }) => {
-  const { precio, tipo, img } = pizza;
+const Card = ({ receta, setCart, cart }) => {
+  const { pricePerServing, title, image } = receta;
   return (
     <div className={cardContainer}>
-      <img src={img} alt={tipo} />
-      <h3>{tipo}</h3>
-      <h4>{precio}</h4>
+      <img src={image} alt={title} />
+      <h3>{title}</h3>
+      <h4>${pricePerServing}</h4>
       <Counter />
-      <button onClick={() => setCart([...cart, pizza])}>Agregar al 🛒</button>
+      <button onClick={() => setCart([...cart, receta])}>Agregar al 🛒</button>
     </div>
   );
 };
