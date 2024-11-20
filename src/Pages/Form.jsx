@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Message from "./Message";
+import Message from "../Components/Message";
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
   //   const [nombre, setNombre] = useState("");
@@ -11,18 +12,10 @@ const Form = () => {
   });
   const [show, setShow] = useState(false);
   const [error, setError] = useState(false);
-
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
     const regexNum = /[0-9]/; // /\d/
-    console.log(regexNum.test(user.direccion));
-
-    // trim() //trimStart()
-    // string[0] !== " "
-    // let regex = /^\s/
-    // !regex.test(string)
-    // !string.startsWith(" ")
-
     if (
       user.nombre.trim().length >= 3 &&
       !regexNum.test(user.nombre) &&
@@ -30,6 +23,9 @@ const Form = () => {
       user.direccion.includes(" ")
     ) {
       setShow(true);
+      setTimeout(() => {
+        navigate("/");
+      }, 3000);
     } else {
       setError(true);
     }
