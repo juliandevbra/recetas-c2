@@ -12,8 +12,8 @@ const Navbar = () => {
       <Link to="/form">
         <h4>Form</h4>
       </Link>
-      <Link to="/favs">
-        <h4>Favoritos</h4>
+      <Link to="/cart">
+        <h4>Carrito</h4>
       </Link>
     </nav>
   );
