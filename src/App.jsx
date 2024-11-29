@@ -5,17 +5,12 @@ import Form from "./Pages/Form";
 import { Route, Routes } from "react-router-dom";
 import Cart from "./Pages/Cart";
 import Detail from "./Pages/Detail";
-import ParentComponent from "./Clase 13/ParentComponent";
-import LoboEstepario from "./Clase 13/LoboEstepario";
-import Context from "./Clase 13/Context";
+import Counter from "./Clase 14/Counter";
 
 function App() {
   return (
     <>
-      {/* <Context>
-        <ParentComponent />
-        <LoboEstepario />
-      </Context> */}
+      {/* <Counter /> */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

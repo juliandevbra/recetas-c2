@@ -10,34 +10,45 @@ button {
   min-width: 10px;
   min-height: 30px;
   background-color: firebrick;
+  margin: 5px;
+  cursor: pointer;
 }
 
 h3,
 h4 {
   margin: 10px;
 }
-.parent {
-  padding: 20px;
-  height: 58vh;
-  background-color: #bbbbbb;
-}
-.child {
-  width: 90%;
-  height: 70%;
-  display: block;
-  margin: auto;
-  background-color: #8282f2;
-}
-.lobo-estepario {
-  background-color: beige;
-  color: black;
+.btnGroup {
   display: flex;
-  justify-content: flex-end;
-  margin-top: 50px;
-  margin-right: 10px;
+  flex-direction: row;
+  align-items: center;
 }
-.lobo {
-  width: 80px;
-  height: 80px;
-  margin-right: 10px;
+
+.btnGroup button {
+  min-width: 30px;
+  background-color: transparent;
+  border: 1px solid firebrick;
+  margin: 5px;
+  color: firebrick;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.btnGroup button:hover {
+  box-shadow: 2px 2px 5px #000;
+}
+
+.btnGroup button:focus,
+button:focus-visible {
+  outline: none;
+}
+
+.cartBtn {
+  background-color: transparent;
+  border: 1px solid firebrick;
+  color: firebrick;
+  transition: 0.3s;
+}
+.cartBtn:hover {
+  box-shadow: 2px 2px 5px #000;
 }

@@ -1,6 +1,6 @@
 const Counter = ({ counter, setCounter }) => {
   return (
-    <div>
+    <div className="btnGroup">
       <button disabled={counter === 0} onClick={() => setCounter(counter - 1)}>
         -
       </button>

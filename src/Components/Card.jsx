@@ -7,7 +7,7 @@ import { useState } from "react";
 const Card = ({ receta }) => {
   const { pricePerServing, title, image } = receta;
   const [counter, setCounter] = useState(0);
-  const { setCart } = useRecipeStates();
+  const { dispatch } = useRecipeStates();
   return (
     <div className={cardContainer}>
       <Link to={"/detail/" + receta.id}>
@@ -17,8 +17,12 @@ const Card = ({ receta }) => {
       <h4>${pricePerServing}</h4>
       <Counter counter={counter} setCounter={setCounter} />
       <button
+        className="cartBtn"
         disabled={counter == 0}
-        onClick={() => setCart((prev) => [...prev, receta])}
+        onClick={
+          () => dispatch({ type: "ADD_CART", payload: receta })
+          // setCart((prev) => [...prev, receta]
+        }
       >
         Agregar al 🛒
       </button>
