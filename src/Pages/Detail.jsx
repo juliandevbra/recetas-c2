@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
+import withErrorBoundary from "../withErrorBoundary";
 
 const Detail = () => {
   const [recipe, setRecipe] = useState({});
@@ -10,14 +12,42 @@ const Detail = () => {
   const url = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`;
 
   useEffect(() => {
-    axios(url)
-      .then((res) => {
-        console.log(res.data);
+    //Llamado GET mediante .then()
+    // axios(url)
+    //   .then((res) => {
+    //     console.log(res.data);
+    //     setRecipe(res.data);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+
+    //Llamado get mediante async/await
+    // const getRecipe = async () => {
+    //  try{
+    // const res = await axios(url);
+    //   console.log(res);
+    // setRecipe(res.data);
+    // } catch(err) {
+    //   console.log(err)
+    // }
+    // };
+    // getRecipe();
+
+    //Llamado GET mediante IIFE
+    (async () => {
+      try {
+        const res = await axios(url);
+        console.log(res);
         setRecipe(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      } catch (err) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Error al obtener el detalle de la receta",
+        });
+      }
+    })();
   }, []);
 
   return (
@@ -29,4 +59,4 @@ const Detail = () => {
   );
 };
 
-export default Detail;
+export default withErrorBoundary(Detail);

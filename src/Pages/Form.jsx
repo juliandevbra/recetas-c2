@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Message from "../Components/Message";
 import { useNavigate } from "react-router-dom";
+import withErrorBoundary from "../withErrorBoundary";
 
 const Form = () => {
   //   const [nombre, setNombre] = useState("");
@@ -30,8 +31,7 @@ const Form = () => {
       setError(true);
     }
   };
-  console.log(user);
-
+  // console.log(user);
   return (
     <div>
       {/*  {condicon ? true : false} */}
@@ -64,4 +64,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default withErrorBoundary(Form);

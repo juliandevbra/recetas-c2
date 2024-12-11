@@ -1,5 +1,6 @@
 import Card from "../Components/Card";
 import { useRecipeStates } from "../Context/Context";
+import withErrorBoundary from "../withErrorBoundary";
 
 const titleStyles = {
   backgroundColor: "#ffda92",
@@ -24,4 +25,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default withErrorBoundary(Home);
